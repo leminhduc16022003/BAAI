@@ -8,6 +8,6 @@
 # 2. Process
 
 # 3. Output
-print('Hello Tunghai University!')
+print('Hello THU')
 print("I like professor Kim's class a lot")
 
