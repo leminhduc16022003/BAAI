@@ -6,55 +6,41 @@ products = [{"name": "Laptop", "price": 1200, "category": "Electronics"},
 {"name": "Jacket", "price": 95, "category": "Clothing"},
 {"name": "Book", "price": 25, "category": "Books"},
 {"name": "Headphones", "price": 150, "category": "Electronics"}]
-# 1. Initialize tracking variables
 total_original_price = 0
 total_discount_amount = 0
 total_final_price = 0
 print("=== PRODUCT DISCOUNT CALCULATOR ===")
-
-# 2. Loop through each product
 for product in products:
-    # Get product details
     name = product["name"]
     price = product["price"]
     category = product["category"]
 
-    discount_percent = 0  # Default discount
-
-    # 3. Determine discount based on the rules
+    discount_percent = 0 
     if category == "Electronics":
         if price >= 1000:
-            discount_percent = 0.20  # 20%
+            discount_percent = 0.20  
         elif price >= 500:
-            discount_percent = 0.15  # 15%
+            discount_percent = 0.15  
         else:
-            discount_percent = 0.10  # 10%
+            discount_percent = 0.10  
     elif category == "Clothing":
         if price >= 100:
-            discount_percent = 0.25  # 25%
+            discount_percent = 0.25  
         else:
-            discount_percent = 0.15  # 15%
+            discount_percent = 0.15  
     elif category == "Books":
-        discount_percent = 0.10  # Flat 10%
-
-    # 4. Calculate prices
+        discount_percent = 0.10
     discount_amount = price * discount_percent
     final_price = price - discount_amount
-
-    # 5. Print product details in the required format
+    total_original_price += price
+    total_discount_amount += discount_amount
+    total_final_price += final_price
     print(f"\nProduct: {name}")
     print(f" Category: {category}")
     print(f" Original Price: ${price:.2f}")
     print(f" Discount: {int(discount_percent * 100)}%")
     print(f" Final Price: ${final_price:.2f}")
-
-    # 6. Update summary totals
-    total_original_price += price
-    total_discount_amount += discount_amount
-    total_final_price += final_price
-
-# 7. Generate and print the final summary
-print("\n" + "="*10 + " SUMMARY " + "="*10)
+print("\n" + "="*3 + " SUMMARY " + "="*3)
 print(f"Total Products: {len(products)}")
 print(f"Total Original Price: ${total_original_price:.2f}")
 print(f"Total Discount: ${total_discount_amount:.2f}")
