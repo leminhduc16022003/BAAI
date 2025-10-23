@@ -5,7 +5,7 @@ df = pd.read_excel('Sales_Data.xlsx')
 total_bonuses = 0
 #Create heading
 print("SALES PERFORMANCE REPORT")
-print("="*25)
+print("="*24)
 #Using loop through each row of the dataframe:
 for employee_name, row in df.iterrows():
     employee_name = row['Employee_Name']
